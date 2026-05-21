@@ -37,14 +37,3 @@
   </p>
 </div>
 
-<!-- 可选：为动画添加 style（放在文件末尾或开头均可） -->
-<style>
-  @keyframes pulseGlow {
-    0% {
-      text-shadow: 0 0 0px rgba(245, 87, 108, 0);
-    }
-    100% {
-      text-shadow: 0 0 12px rgba(245, 87, 108, 0.5);
-    }
-  }
-</style>
