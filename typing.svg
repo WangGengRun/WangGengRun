@@ -1,145 +1,32 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 130" width="500" height="130">
   <style>
     .terminal-text {
+      /* 强制使用等宽字体，确保每个字符宽度绝对一致 */
       font-family: 'Fira Code', 'Courier New', monospace;
       font-size: 18px;
-      /* 换为深蓝色 */
-      fill: #0047AB; 
+      font-weight: 600;
+      letter-spacing: 0px;
+      fill: #0047AB; /* 沉稳深蓝色 */
     }
-    .char { opacity: 0; }
     
-    /* 第一行动画：0s - 0.8s */
-    .l1 { animation: fadeIn 0s forwards; }
-    /* 第二行动画：1.2s - 2.5s */
-    .l2 { animation: fadeIn 0s forwards; }
-    /* 第三行动画：2.8s - 3.8s */
-    .l3 { animation: fadeIn 0s forwards; }
-    /* 第四行动画：4.2s - 5.8s */
-    .l4 { animation: fadeIn 0s forwards; }
+    /* 核心：利用 clip-path 实现完美的逐字切入动画，不破坏字符本身的间距 */
+    .line1 { clip-path: inset(0 100% 0 0); animation: type1 1.2s steps(15) forwards; }
+    .line2 { clip-path: inset(0 100% 0 0); animation: type2 2.0s steps(35) 1.2s forwards; }
+    .line3 { clip-path: inset(0 100% 0 0); animation: type3 1.5s steps(23) 3.2s forwards; }
+    .line4 { clip-path: inset(0 100% 0 0); animation: type4 2.2s steps(36) 4.7s forwards; }
 
-    @keyframes fadeIn { to { opacity: 1; } }
+    /* 按各行字符长度精准裁剪：利用 X 轴百分比从 100% 裁剪到 0% */
+    @keyframes type1 { to { clip-path: inset(0 0% 0 0); } }
+    @keyframes type2 { to { clip-path: inset(0 0% 0 0); } }
+    @keyframes type3 { to { clip-path: inset(0 0% 0 0); } }
+    @keyframes type4 { to { clip-path: inset(0 0% 0 0); } }
   </style>
 
   <g class="terminal-text">
-    <!-- 第一行：> I'm GodspRun. -->
-    <text x="20" y="28">
-      <tspan class="char l1" style="animation-delay: 0.0s;">&gt;</tspan>
-      <tspan class="char l1" style="animation-delay: 0.1s;"> </tspan>
-      <tspan class="char l1" style="animation-delay: 0.2s;">I</tspan>
-      <tspan class="char l1" style="animation-delay: 0.3s;">'</tspan>
-      <tspan class="char l1" style="animation-delay: 0.4s;">m</tspan>
-      <tspan class="char l1" style="animation-delay: 0.5s;"> </tspan>
-      <tspan class="char l1" style="animation-delay: 0.6s;">G</tspan>
-      <tspan class="char l1" style="animation-delay: 0.7s;">o</tspan>
-      <tspan class="char l1" style="animation-delay: 0.8s;">d</tspan>
-      <tspan class="char l1" style="animation-delay: 0.9s;">s</tspan>
-      <tspan class="char l1" style="animation-delay: 1.0s;">p</tspan>
-      <tspan class="char l1" style="animation-delay: 1.1s;">R</tspan>
-      <tspan class="char l1" style="animation-delay: 1.2s;">u</tspan>
-      <tspan class="char l1" style="animation-delay: 1.3s;">n</tspan>
-      <tspan class="char l1" style="animation-delay: 1.4s;">.</tspan>
-    </text>
-
-    <!-- 第二行：> A Software Development Engineer. -->
-    <text x="20" y="58">
-      <tspan class="char l2" style="animation-delay: 1.6s;">&gt;</tspan>
-      <tspan class="char l2" style="animation-delay: 1.7s;"> </tspan>
-      <tspan class="char l2" style="animation-delay: 1.8s;">A</tspan>
-      <tspan class="char l2" style="animation-delay: 1.9s;"> </tspan>
-      <tspan class="char l2" style="animation-delay: 2.0s;">S</tspan>
-      <tspan class="char l2" style="animation-delay: 2.1s;">o</tspan>
-      <tspan class="char l2" style="animation-delay: 2.2s;">f</tspan>
-      <tspan class="char l2" style="animation-delay: 2.3s;">t</tspan>
-      <tspan class="char l2" style="animation-delay: 2.4s;">w</tspan>
-      <tspan class="char l2" style="animation-delay: 2.5s;">a</tspan>
-      <tspan class="char l2" style="animation-delay: 2.6s;">r</tspan>
-      <tspan class="char l2" style="animation-delay: 2.7s;">e</tspan>
-      <tspan class="char l2" style="animation-delay: 2.8s;"> </tspan>
-      <tspan class="char l2" style="animation-delay: 2.9s;">D</tspan>
-      <tspan class="char l2" style="animation-delay: 3.0s;">e</tspan>
-      <tspan class="char l2" style="animation-delay: 3.1s;">v</tspan>
-      <tspan class="char l2" style="animation-delay: 3.2s;">e</tspan>
-      <tspan class="char l2" style="animation-delay: 3.3s;">l</tspan>
-      <tspan class="char l2" style="animation-delay: 3.4s;">o</tspan>
-      <tspan class="char l2" style="animation-delay: 3.5s;">p</tspan>
-      <tspan class="char l2" style="animation-delay: 3.6s;">m</tspan>
-      <tspan class="char l2" style="animation-delay: 3.7s;">e</tspan>
-      <tspan class="char l2" style="animation-delay: 3.8s;">n</tspan>
-      <tspan class="char l2" style="animation-delay: 3.9s;">t</tspan>
-      <tspan class="char l2" style="animation-delay: 4.0s;"> </tspan>
-      <tspan class="char l2" style="animation-delay: 4.1s;">E</tspan>
-      <tspan class="char l2" style="animation-delay: 4.2s;">n</tspan>
-      <tspan class="char l2" style="animation-delay: 4.3s;">g</tspan>
-      <tspan class="char l2" style="animation-delay: 4.4s;">i</tspan>
-      <tspan class="char l2" style="animation-delay: 4.5s;">n</tspan>
-      <tspan class="char l2" style="animation-delay: 4.6s;">e</tspan>
-      <tspan class="char l2" style="animation-delay: 4.7s;">e</tspan>
-      <tspan class="char l2" style="animation-delay: 4.8s;">r</tspan>
-      <tspan class="char l2" style="animation-delay: 4.9s;">.</tspan>
-    </text>
-
-    <!-- 第三行：> An Anime Enthusiast. -->
-    <text x="20" y="88">
-      <tspan class="char l3" style="animation-delay: 5.1s;">&gt;</tspan>
-      <tspan class="char l3" style="animation-delay: 5.2s;"> </tspan>
-      <tspan class="char l3" style="animation-delay: 5.3s;">A</tspan>
-      <tspan class="char l3" style="animation-delay: 5.4s;">n</tspan>
-      <tspan class="char l3" style="animation-delay: 5.5s;"> </tspan>
-      <tspan class="char l3" style="animation-delay: 5.6s;">A</tspan>
-      <tspan class="char l3" style="animation-delay: 5.7s;">n</tspan>
-      <tspan class="char l3" style="animation-delay: 5.8s;">i</tspan>
-      <tspan class="char l3" style="animation-delay: 5.9s;">m</tspan>
-      <tspan class="char l3" style="animation-delay: 6.0s;">e</tspan>
-      <tspan class="char l3" style="animation-delay: 6.1s;"> </tspan>
-      <tspan class="char l3" style="animation-delay: 6.2s;">E</tspan>
-      <tspan class="char l3" style="animation-delay: 6.3s;">n</tspan>
-      <tspan class="char l3" style="animation-delay: 6.4s;">t</tspan>
-      <tspan class="char l3" style="animation-delay: 6.5s;">h</tspan>
-      <tspan class="char l3" style="animation-delay: 6.6s;">u</tspan>
-      <tspan class="char l3" style="animation-delay: 6.7s;">s</tspan>
-      <tspan class="char l3" style="animation-delay: 6.8s;">i</tspan>
-      <tspan class="char l3" style="animation-delay: 6.9s;">a</tspan>
-      <tspan class="char l3" style="animation-delay: 7.0s;">s</tspan>
-      <tspan class="char l3" style="animation-delay: 7.1s;">t</tspan>
-      <tspan class="char l3" style="animation-delay: 7.2s;">.</tspan>
-    </text>
-
-    <!-- 第四行：> Keep Learning, Keep Progressing. -->
-    <text x="20" y="118">
-      <tspan class="char l4" style="animation-delay: 7.4s;">&gt;</tspan>
-      <tspan class="char l4" style="animation-delay: 7.5s;"> </tspan>
-      <tspan class="char l4" style="animation-delay: 7.6s;">K</tspan>
-      <tspan class="char l4" style="animation-delay: 7.7s;">e</tspan>
-      <tspan class="char l4" style="animation-delay: 7.8s;">e</tspan>
-      <tspan class="char l4" style="animation-delay: 7.9s;">p</tspan>
-      <tspan class="char l4" style="animation-delay: 8.0s;"> </tspan>
-      <tspan class="char l4" style="animation-delay: 8.1s;">L</tspan>
-      <tspan class="char l4" style="animation-delay: 8.2s;">e</tspan>
-      <tspan class="char l4" style="animation-delay: 8.3s;">a</tspan>
-      <tspan class="char l4" style="animation-delay: 8.4s;">r</tspan>
-      <tspan class="char l4" style="animation-delay: 8.5s;">n</tspan>
-      <tspan class="char l4" style="animation-delay: 8.6s;">i</tspan>
-      <tspan class="char l4" style="animation-delay: 8.7s;">n</tspan>
-      <tspan class="char l4" style="animation-delay: 8.8s;">g</tspan>
-      <tspan class="char l4" style="animation-delay: 8.9s;">,</tspan>
-      <tspan class="char l4" style="animation-delay: 9.0s;"> </tspan>
-      <tspan class="char l4" style="animation-delay: 9.1s;">K</tspan>
-      <tspan class="char l4" style="animation-delay: 9.2s;">e</tspan>
-      <tspan class="char l4" style="animation-delay: 9.3s;">e</tspan>
-      <tspan class="char l4" style="animation-delay: 9.4s;">p</tspan>
-      <tspan class="char l4" style="animation-delay: 9.5s;"> </tspan>
-      <tspan class="char l4" style="animation-delay: 9.6s;">P</tspan>
-      <tspan class="char l4" style="animation-delay: 9.7s;">r</tspan>
-      <tspan class="char l4" style="animation-delay: 9.8s;">o</tspan>
-      <tspan class="char l4" style="animation-delay: 9.9s;">g</tspan>
-      <tspan class="char l4" style="animation-delay: 10.0s;">r</tspan>
-      <tspan class="char l4" style="animation-delay: 10.1s;">e</tspan>
-      <tspan class="char l4" style="animation-delay: 10.2s;">s</tspan>
-      <tspan class="char l4" style="animation-delay: 10.3s;">s</tspan>
-      <tspan class="char l4" style="animation-delay: 10.4s;">i</tspan>
-      <tspan class="char l4" style="animation-delay: 10.5s;">n</tspan>
-      <tspan class="char l4" style="animation-delay: 10.6s;">g</tspan>
-      <tspan class="char l4" style="animation-delay: 10.7s;">.</tspan>
-    </text>
+    <!-- 纯整行文本书写，完美保留等宽字体的原生高级间距 -->
+    <text x="20" y="25" class="line1">&gt; I'm GodspRun.</text>
+    <text x="20" y="55" class="line2">&gt; A Software Development Engineer.</text>
+    <text x="20" y="85" class="line3">&gt; An Anime Enthusiast.</text>
+    <text x="20" y="115" class="line4">&gt; Keep Learning, Keep Progressing.</text>
   </g>
 </svg>
