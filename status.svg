@@ -24,7 +24,7 @@
 
   <g class="terminal-text">
     <!-- 纯整行文本书写，完美保留等宽字体的原生高级间距 -->
-    <text x="20" y="25" class="line1">&gt; I'm GodspRun.</text>
+    <text x="20" y="25" class="line1">&gt; Hi, I'm GodspRun.</text>
     <text x="20" y="55" class="line2">&gt; A Software Development Engineer.</text>
     <text x="20" y="85" class="line3">&gt; An Anime Enthusiast.</text>
     <text x="20" y="115" class="line4">&gt; Keep Learning, Keep Progressing.</text>
