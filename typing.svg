@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 130" width="500" height="130">
+  <style>
+    .terminal-text {
+      font-family: 'Fira Code', 'Courier New', monospace;
+      font-size: 18px;
+      fill: #87CEEB;
+    }
+    .line {
+      overflow: hidden;
+      white-space: nowrap;
+      stroke-width: 0;
+    }
+    .line1 { width: 0; animation: type1 1.2s steps(15) forwards; }
+    .line2 { width: 0; animation: type2 1.5s steps(30) 1.2s forwards; }
+    .line3 { width: 0; animation: type3 1.2s steps(20) 2.7s forwards; }
+    .line4 { width: 0; animation: type4 1.8s steps(35) 3.9s forwards; }
+    
+    @keyframes type1 { from { width: 0; } to { width: 150px; } }
+    @keyframes type2 { from { width: 0; } to { width: 380px; } }
+    @keyframes type3 { from { width: 0; } to { width: 250px; } }
+    @keyframes type4 { from { width: 0; } to { width: 400px; } }
+  </style>
+  <g class="terminal-text">
+    <svg x="20" y="10" height="25" class="line line1">
+      <text x="0" y="18">&gt; I'm GodspRun.</text>
+    </svg>
+    <svg x="20" y="40" height="25" class="line line2">
+      <text x="0" y="18">&gt; A Software Development Engineer.</text>
+    </svg>
+    <svg x="20" y="70" height="25" class="line line3">
+      <text x="0" y="18">&gt; An Anime Enthusiast.</text>
+    </svg>
+    <svg x="20" y="100" height="25" class="line line4">
+      <text x="0" y="18">&gt; Keep Learning, Keep Progressing.</text>
+    </svg>
+  </g>
+</svg>
