@@ -1,4 +1,4 @@
-# 👋 Hello World!
+# Hello World!
 
 <div align="center">
   <!-- 浅蓝色打字机动态效果组件 -->
